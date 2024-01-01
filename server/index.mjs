@@ -3,7 +3,7 @@ import cors from "cors";
 import { MercadoPagoConfig, Preference } from "mercadopago";
 
 const client = new MercadoPagoConfig({
-  accessToken: "TEST-7238239541132588-123116-5e915942a198814e530e812424878ae2-514242842",
+  accessToken: "APP_USR-7238239541132588-123116-350b3ce2ac0d425df87a3cad43328bfc-514242842",
 });
 
 const app = express();
@@ -32,6 +32,7 @@ app.post("/create_preference", async (req, res) => {
         {
           title: req.body.title,
           unit_price: Number(req.body.price),
+          quantity: 1,
           currency_id: "ARS",
         },
       ],
